@@ -1,0 +1,12 @@
+#!/usr/bin/env zsh
+
+PASSWORD_STORE_DIR="$HOME/.password-store"
+
+if [[ -v 1 ]]
+then
+    pass $*
+else
+    PASSWORD_FILE="$(find $PASSWORD_STORE_DIR -type f ! -path "*.git*" -printf '%P\n'|sed s'|.gpg$||'|fzf)"
+    echo "login: $(basename "$PASSWORD_FILE")"
+    pass -c $* $PASSWORD_FILE
+fi

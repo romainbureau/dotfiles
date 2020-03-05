@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+
+if [[ -v 1 ]]
+then
+    $EDITOR $*
+else
+    $EDITOR $(fzf --reverse --border --height 40% --inline-info --preview="cat {}" --preview-window=right:70%:wrap)
+fi

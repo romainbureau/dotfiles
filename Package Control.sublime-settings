@@ -1,0 +1,24 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"A File Icon",
+		"Ansible",
+		"Dockerfile Syntax Highlighting",
+		"EditorConfig",
+		"LSP",
+		"Material Theme",
+		"Package Control",
+		"SublimeGit",
+		"SublimeLinter",
+		"SublimeLinter-contrib-ansible-lint",
+		"SublimeLinter-contrib-yamllint",
+		"SublimeLinter-shellcheck",
+		"Sublimerge 3",
+		"Terrafmt",
+		"Terraform"
+	]
+}
