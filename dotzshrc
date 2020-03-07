@@ -91,7 +91,8 @@ then
     source "$HOME/.local_env"
 fi
 
-functions_dir="$(dirname $(readlink $HOME/.zshrc))/functions"
+dotfiles_dir="$(dirname $(readlink $HOME/.zshrc))"
+functions_dir="$dotfiles_dir/functions"
 if [[ -d "$functions_dir" ]]
 then
     for i in $(/bin/ls $functions_dir)
@@ -100,6 +101,6 @@ then
     done
 fi
 
-
+source "$dotfiles_dir/alias"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
