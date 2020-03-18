@@ -1,10 +1,8 @@
 alias meteo="curl -4 wttr.in/Versailles,France"
 alias myip="curl ifconfig.me"
-alias vim="fzvim"
 alias pass="fzpass"
 alias ls="ls -rtlh"
 alias la="ls -rtlha"
 
 alias fzf='fzf --reverse --border --height 40% --inline-info'
-alias vimdiff='nvim -d'
 alias testdhcp='sudo nmap --script broadcast-dhcp-discover'
