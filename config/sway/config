@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term termite 
+set $term termite
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -22,6 +22,7 @@ set $term termite
 set $menu dmenu_path | wofi --show drun | xargs swaymsg exec --
 
 set $lock "swaylock -f -c 000000"
+
 # Window borders
 # default_border pixel 1
 # default_floating_border normal
@@ -39,6 +40,9 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
 output eDP-1 resolution 1920x1080 position 0,0
 output DP-4 resolution 2560x1440 position 1920,0
+
+# floating windows
+for_window [class="Pavucontrol"] floating enable
 
 ### Idle configuration
 #
@@ -94,7 +98,6 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
-    # Reload the configuration file
     bindsym $mod+Shift+d $lock
 #
 # Moving around:
@@ -212,7 +215,7 @@ bindsym $mod+r mode "resize"
 # Brightness controls
 bindsym --locked XF86MonBrightnessUp exec --no-startup-id light -A 10
 bindsym --locked XF86MonBrightnessDown exec --no-startup-id light -U 10
-# Sound 
+# Sound
 bindsym --locked XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5%
 bindsym --locked XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') -5%
 bindsym --locked XF86AudioMute exec --no-startup-id pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle
@@ -224,17 +227,7 @@ bindsym Control+Shift+Space exec makoctl dismiss --all
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+    swaybar_command waybar
 }
 
 exec --no-startup-id mako
