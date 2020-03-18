@@ -19,5 +19,6 @@ then
     done
 fi
 
+. "$dotfiles_dir/colors"
 . "$dotfiles_dir/alias"
 . "$dotfiles_dir/ps1"
