@@ -46,4 +46,4 @@ function parse_git_dirty {
 	fi
 }
 
-export PS1="${Green}\u${NC}@${Blue}\h${NC} \w \$(parse_git_branch)\\$ "
+export PS1="${Green}\u${NC}@${Blue}\h${NC} \w \$(parse_git_branch) \n$ "
