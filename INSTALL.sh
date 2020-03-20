@@ -4,6 +4,7 @@ ln -sf $HOME/workspace/dotfiles/config/sway $HOME/.config/
 ln -sf $HOME/workspace/dotfiles/config/termite $HOME/.config/
 ln -sf $HOME/workspace/dotfiles/config/waybar $HOME/.config/
 ln -sf $HOME/workspace/dotfiles/config/alacritty $HOME/.config/
+ln -sf $HOME/workspace/dotfiles/config/kanshi $HOME/.config/
 ln -sf $HOME/workspace/dotfiles/gitconfig $HOME/.gitconfig
 ln -sf $HOME/workspace/dotfiles/tmux.conf $HOME/.tmux.conf
 ln -sf $HOME/workspace/dotfiles/bash_profile $HOME/.bash_profile
