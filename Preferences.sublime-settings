@@ -68,5 +68,7 @@
 	"translate_tabs_to_spaces": true,
 	"tree_animation_enabled": false,
 	"vintage_start_in_command_mode": true,
-	"word_wrap": true
+	"word_wrap": true,
+	"hot_exit": false,
+	"remember_open_files": false
 }
