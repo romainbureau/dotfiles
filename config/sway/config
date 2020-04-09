@@ -20,6 +20,7 @@ set $term alacritty
 # on the original workspace that the command was run on.
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
 set $menu dmenu_path | wofi --show drun | xargs swaymsg exec --
+set $passmenu ~/bin/wofi-pass
 
 set $lock "swaylock -f -c 000000"
 
@@ -105,6 +106,8 @@ input "1:1:AT_Translated_Set_2_keyboard" {
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
     bindsym $mod+Shift+d exec $lock
+
+    bindsym $mod+p exec $passmenu
 #
 # Moving around:
 #

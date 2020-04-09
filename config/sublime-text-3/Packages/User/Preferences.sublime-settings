@@ -50,8 +50,10 @@
 	"draw_white_space": "all",
 	"enable_tab_scrolling": false,
 	"fold_buttons": false,
+	"font_size": 11,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
+	"hot_exit": false,
 	"ignored_packages":
 	[
 		"Vintage"
@@ -60,6 +62,7 @@
 	"line_padding_top": 1,
 	"margin": 2,
 	"overlay_scroll_bars": "enabled",
+	"remember_open_files": false,
 	"show_encoding": true,
 	"show_full_path": true,
 	"show_line_endings": true,
@@ -68,7 +71,5 @@
 	"translate_tabs_to_spaces": true,
 	"tree_animation_enabled": false,
 	"vintage_start_in_command_mode": true,
-	"word_wrap": true,
-	"hot_exit": false,
-	"remember_open_files": false
+	"word_wrap": true
 }
