@@ -1,10 +1,8 @@
-alias meteo="curl -4 wttr.in/Versailles,France"
+alias meteo="curl wttr.in"
 alias myip="curl ifconfig.me"
-alias pass="fzpass"
+alias pass='pass $(list_passwords|fzf)|wl-copy'
 alias ls="ls -rtlh"
 alias la="ls -rtlha"
-
 alias orphanpkg="sudo pacman -Qqdt"
-
 alias fzf='fzf --reverse --border --height 40% --inline-info'
 alias testdhcp='sudo nmap --script broadcast-dhcp-discover'
