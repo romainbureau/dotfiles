@@ -242,6 +242,6 @@ bar {
 exec --no-startup-id mako
 exec --no-startup-id kanshi
 exec --no-startup-id pulseaudio --daemonize
-exec --no-startup-id redshift -l 48.856613:2.352222 -t 4500K:3000K
+exec --no-startup-id redshift
 
 include /etc/sway/config.d/*
