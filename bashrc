@@ -4,7 +4,12 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+unset DISPLAY # fix firefox (use wayland instead of x11)
+
 export GPG_TTY=$(tty)
+export HISTSIZE=10000
+export HISTCONTROL=ignorespace:erasedups
+export HISTIGNORE="ls:ps:history"
 
 [[ -f ~/.localrc ]] && . ~/.localrc
 [[ -f /usr/share/fzf/completion.bash ]] && . /usr/share/fzf/completion.bash
