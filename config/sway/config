@@ -239,9 +239,6 @@ bar {
     swaybar_command waybar
 }
 
-exec --no-startup-id mako
-exec --no-startup-id kanshi
-exec --no-startup-id pulseaudio --daemonize
-exec --no-startup-id redshift
+exec ~/.config/sway/startup.sh
 
 include /etc/sway/config.d/*
