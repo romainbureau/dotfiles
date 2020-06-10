@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+export PASSWORD_STORE_DIR="$HOME/.password-store"
+
+list_passwords() {
+  find $PASSWORD_STORE_DIR -type f ! -path "*.git*" -printf '%P\n'|sed s'|.gpg$||'
+}
+
+if [[ -v 1 ]]
+then
+    pass $*
+else
+    PASSWORD_FILE="$(list_passwords|fzf)"
+    echo "login: $(basename "$PASSWORD_FILE")"
+    pass $PASSWORD_FILE |wl-copy
+fi

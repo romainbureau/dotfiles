@@ -1,6 +1,6 @@
 alias meteo="curl wttr.in"
 alias myip="curl ifconfig.me"
-alias pass='pass $(list_passwords|fzf)|wl-copy'
+alias pass='fzpass'
 alias ls="ls -rtlh"
 alias la="ls -rtlha"
 alias orphanpkg="sudo pacman -Qqdt"
