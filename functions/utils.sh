@@ -2,5 +2,7 @@
 
 function screenshot() {
 	local date="$(date +'%Y-%m-%d-%H%M%S')"
-	grim -g "$(slurp)" "$date.png"
+  local dir="$HOME/Screenshots/"
+  mkdir -p "$dir"
+	grim -g "$(slurp)" "$dir/$date.png"
 }

@@ -4,11 +4,11 @@
 	[
 		{
 			"characters": "<",
-			"selector": "text.html"
+			"selector": "text.html",
 		},
 		{
 			"characters": ".",
-			"selector": "source.js,source.jsx,source.go,source.python"
+			"selector": "source.js,source.jsx,source.go,source.python",
 		}
 	],
 	"binary_file_patterns":
@@ -56,7 +56,7 @@
 	"hot_exit": false,
 	"ignored_packages":
 	[
-		"Vintage"
+		"Vintage",
 	],
 	"line_padding_bottom": 1,
 	"line_padding_top": 1,
@@ -71,5 +71,6 @@
 	"translate_tabs_to_spaces": true,
 	"tree_animation_enabled": false,
 	"vintage_start_in_command_mode": true,
-	"word_wrap": true
+	"word_wrap": true,
+	"dictionary": "Packages/Language - French - Français/fr_FR (modern).dic",
 }
