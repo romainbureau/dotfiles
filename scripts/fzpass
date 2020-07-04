@@ -6,7 +6,7 @@ list_passwords() {
   find $PASSWORD_STORE_DIR -type f ! -path "*.git*" -printf '%P\n'|sed s'|.gpg$||'
 }
 
-if [[ -v 1 ]]
+if [ "$#" -ne 0 ]
 then
     pass $*
 else
