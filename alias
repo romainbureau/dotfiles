@@ -6,3 +6,4 @@ alias la="ls -rtlha"
 alias orphanpkg="sudo pacman -Qqdt"
 alias fzf='fzf --reverse --border --height 40% --inline-info'
 alias testdhcp='sudo nmap --script broadcast-dhcp-discover'
+alias note='subl -n ~/Documents/notes.md'
