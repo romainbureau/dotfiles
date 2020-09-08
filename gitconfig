@@ -2,23 +2,19 @@
   name = Romain Bureau
   email = rb@hio.fr
   signingkey = C68013856070FED0
-
 [core]
   editor = vim
   pager = delta --dark
   autocrlf = input
-
 [color "diff"]
   plain = white
   meta = bold
   old = red
   new = green
-
 [color]
   diff = auto
   status = auto
   branch = auto
-
 [alias]
   st = status
   ci = commit
@@ -34,15 +30,15 @@
   undo = reset --soft HEAD^
   graph = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
   sweep = "! git prune && git remote prune origin && git gc && git branch --merged | egrep -v '(^\\*|master)' | xargs git branch -d"
-
+  tidy = rebase -i origin/master
+  pushf = push --force-with-lease
+  rbm = pull --rebase origin master
 [diff "ansible-vault"]
   textconv = ansible-vault view
-
 [commit]
   gpgsign = true
   verbose = true
-
 [push]
   default = current
 [pull]
-	rebase = true
+  rebase = true

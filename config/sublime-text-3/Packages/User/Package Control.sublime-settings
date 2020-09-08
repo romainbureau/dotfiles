@@ -5,13 +5,11 @@
 	],
 	"installed_packages":
 	[
-		"A File Icon",
 		"Ansible",
 		"Dockerfile Syntax Highlighting",
 		"EditorConfig",
 		"Language - French - Français",
 		"LSP",
-		"Material Theme",
 		"Package Control",
 		"SublimeGit",
 		"SublimeLinter",
