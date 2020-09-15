@@ -66,7 +66,7 @@ input 1739:31251:SYNA2393:00_06CB:7A13_Touchpad {
     scroll_factor 0.5
     dwt disabled
     tap enabled
-    natural_scroll enabled
+    natural_scroll disabled 
     middle_emulation enabled
     scroll_method two_finger
     accel_profile adaptive
