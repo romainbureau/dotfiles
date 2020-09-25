@@ -10,6 +10,7 @@
 		"EditorConfig",
 		"Language - French - Français",
 		"LSP",
+		"LSP-bash",
 		"Package Control",
 		"SublimeGit",
 		"SublimeLinter",
@@ -18,6 +19,6 @@
 		"SublimeLinter-shellcheck",
 		"Sublimerge 3",
 		"Terrafmt",
-		"Terraform",
-	],
+		"Terraform"
+	]
 }

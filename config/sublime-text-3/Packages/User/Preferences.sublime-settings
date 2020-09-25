@@ -4,11 +4,11 @@
 	[
 		{
 			"characters": "<",
-			"selector": "text.html",
+			"selector": "text.html"
 		},
 		{
 			"characters": ".",
-			"selector": "source.js,source.jsx,source.go,source.python",
+			"selector": "source.js,source.jsx,source.go,source.python"
 		}
 	],
 	"binary_file_patterns":
@@ -44,8 +44,9 @@
 		"vendors/"
 	],
 	"close_windows_when_empty": false,
-	"color_scheme": "Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
+	"color_scheme": "Packages/Theme - Cobalt2/cobalt2.tmTheme",
 	"default_line_ending": "unix",
+	"dictionary": "Packages/Language - French - Français/fr_FR (modern).dic",
 	"drag_text": false,
 	"draw_white_space": "all",
 	"enable_tab_scrolling": false,
@@ -56,7 +57,7 @@
 	"hot_exit": false,
 	"ignored_packages":
 	[
-		"Vintage",
+		"Vintage"
 	],
 	"line_padding_bottom": 1,
 	"line_padding_top": 1,
@@ -67,10 +68,9 @@
 	"show_full_path": true,
 	"show_line_endings": true,
 	"tab_size": 2,
-	"theme": "Adaptive.sublime-theme",
+	"theme": "Cobalt2.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"tree_animation_enabled": false,
 	"vintage_start_in_command_mode": true,
-	"word_wrap": true,
-	"dictionary": "Packages/Language - French - Français/fr_FR (modern).dic",
+	"word_wrap": true
 }
