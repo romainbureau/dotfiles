@@ -19,6 +19,7 @@
 		"SublimeLinter-shellcheck",
 		"Sublimerge 3",
 		"Terrafmt",
-		"Terraform"
+		"Terraform",
+		"Theme - Cobalt2"
 	]
 }
