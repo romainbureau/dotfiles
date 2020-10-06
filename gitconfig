@@ -33,6 +33,7 @@
   tidy = rebase -i origin/master
   pushf = push --force-with-lease
   rbm = pull --rebase origin master
+  chbr = ! git checkout $(git branch|fzf)
 [diff "ansible-vault"]
   textconv = ansible-vault view
 [commit]
