@@ -6,8 +6,6 @@ function parse_git_branch() {
 	then
 		STAT=$(parse_git_dirty)
 		echo -e "[${Green}${BRANCH}${STAT}${NC}]"
-	else
-		echo ""
 	fi
 }
 
@@ -46,4 +44,21 @@ function parse_git_dirty {
 	fi
 }
 
-export PS1="${Green}\u${NC}@${Blue}\h${NC} \w \$(parse_git_branch) \n$ "
+kube_context_display ()
+{
+  if command -v kubectl > /dev/null 2>&1; then
+    if [[ "${PROMPT_KUBE:-}" == "true" ]]; then
+      printf "[${Blue}$(kubectl config view --minify --output 'jsonpath={..current-context}/{..namespace}')${STAT}${NC}]"
+    fi
+  fi
+}
+
+__prompt_kube_display_enable () {
+  export PROMPT_KUBE=true
+}
+
+__prompt_kube_display_disable () {
+  export PROMPT_KUBE=false
+}
+
+export PS1="${Green}\u${NC}@${Blue}\h${NC} \W \$(parse_git_branch)\$(kube_context_display) \n$ "
