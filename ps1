@@ -61,4 +61,4 @@ __prompt_kube_display_disable () {
   export PROMPT_KUBE=false
 }
 
-export PS1="${Green}\u${NC}@${Blue}\h${NC} \W \$(parse_git_branch)\$(kube_context_display) \n$ "
+export PS1="${Green}\u${NC}@${Blue}\h${NC} \w \$(parse_git_branch)\$(kube_context_display) \n$ "
