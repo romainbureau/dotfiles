@@ -9,4 +9,5 @@ alias testdhcp='sudo nmap --script broadcast-dhcp-discover'
 alias note='subl -n ~/Documents/notes.md'
 alias wifils='nmcli dev wifi'
 # Kubectl
-alias kubectldp='kubectl describe pod $(kubectl get pods --no-headers -o custom-columns=":metadata.name"|fzf)'
+alias kctldescpod='kubectl describe pod $(kubectl get pods --no-headers -o custom-columns=":metadata.name"|fzf)'
+alias kctlpodlog='kail -p $(kubectl get pods --no-headers -o custom-columns=":metadata.name"|fzf)'
