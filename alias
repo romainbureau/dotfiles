@@ -11,3 +11,4 @@ alias wifils='nmcli dev wifi'
 # Kubectl
 alias kctldescpod='kubectl describe pod $(kubectl get pods --no-headers -o custom-columns=":metadata.name"|fzf)'
 alias kctlpodlog='kail -p $(kubectl get pods --no-headers -o custom-columns=":metadata.name"|fzf)'
+alias kctlpodexec='kubectl exec $(kubectl get pods --no-headers -o custom-columns=":metadata.name"|fzf) -it -n $(kubens -c) -- /bin/bash'
