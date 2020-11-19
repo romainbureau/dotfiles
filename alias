@@ -12,13 +12,23 @@ alias wifils='nmcli dev wifi'
 
 function kctllistressources() {
   local ressouces="${1}"
-  local ns="$(kubens -c)"
+  local ns
+  if [[ -z "${2}" ]];then
+    ns="$(kubens -c)"
+  else
+    ns="${2}"
+  fi
   kubectl get ${ressouces} -n ${ns}
 }
 
 function kctldescressource() {
   local ressouce="${1}"
-  local ns="$(kubens -c)"
+  local ns
+  if [[ -z "${2}" ]];then
+    ns="$(kubens -c)"
+  else
+    ns="${2}"
+  fi
   kubectl describe ${ressouce} -n ${ns} $(kubectl get ${ressouce} -n ${ns} --no-headers -o custom-columns=":metadata.name"|fzf)
 }
 
