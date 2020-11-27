@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+
+set -o nounset -o pipefail -o errexit
+
+if [ -f ".env" ]; then
+	cat ".env"
+	source ".env"
+else 
+	echo ".env file not found"
+	exit 1
+fi
+
+function build() {
+
+	if ! command -v docker >/dev/null 2>&1; then
+		var_error "docker not found"
+		exit 1
+	fi
+
+	for BINARY in ${BINARIES[@]};
+	do
+		IFS=':' read -r -a ep <<<"${BINARY}"
+		for OS_ARCH in ${ARCHS[@]};
+		do
+			IFS='/' read -r -a context <<<"${OS_ARCH}"
+			echo "Building binary ${ep[0]}_${context[0]}_${context[1]}"
+			GOOS="${context[0]}" GOARCH="${context[1]}" CGO_ENABLED="0" \
+			go build -ldflags="-s -w" -installsuffix nocgo -o "${OUTPUT_DIR}/${ep[0]}_${context[0]}_${context[1]}" "${ep[1]}"
+		done
+	done
+}
+
+function docker_build() {
+	if ! command -v docker >/dev/null 2>&1; then
+		echo "docker not found"
+		exit 1
+	fi
+
+	for OS_ARCH in ${ARCHS[@]}; do
+		IFS='/' read -r -a context <<<"${OS_ARCH}"
+		local OS="${context[0]}"
+		local ARCH="${context[1]}"
+		local BUILT_IMAGE="${DOCKER_IMAGE}:${VERSION}-${OS}-${ARCH}"
+
+		echo "Building and pushing image for ${OS_ARCH}"
+		docker build --file "Dockerfile" \
+		--tag "${BUILT_IMAGE}" \
+		--build-arg "VERSION=${VERSION}" \
+		--build-arg "TARGETOS=${OS}" \
+		--build-arg "TARGETARCH=${ARCH}" "."
+		docker push "${BUILT_IMAGE}"
+	done
+}
+
+case "${1}" in
+	"build")
+build
+;;
+"docker")
+docker_build
+;;
+esac
