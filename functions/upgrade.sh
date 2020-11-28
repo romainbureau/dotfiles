@@ -3,11 +3,12 @@
 function upgrade_all() {
   upgrade_terraform "0.13.5"
   upgrade_delta "0.4.4"
-  upgrade_kubectl "1.19.3"
+  upgrade_kubectl "1.19.4"
   upgrade_kubectx "0.9.1"
   upgrade_kubens "0.9.1"
   upgrade_kail "0.15.0"
   upgrade_fzf "0.24.2"
+  upgrade_kubeseal "0.13.1"
 }
 
 
@@ -102,6 +103,19 @@ function upgrade_fzf() {
     local URL="https://github.com/junegunn/${FILENAME}/releases/download/${VERSION}/${FILENAME}-${VERSION}-linux_amd64.tar.gz"
     curl -L -o "/tmp/${FILENAME}" "${URL}"
     tar -xvzf "/tmp/${FILENAME}" -C "/tmp" "${FILENAME}"
+    mv "/tmp/${FILENAME}" "${BIN_DIR}/${FILENAME}"
+    chmod +x "${BIN_DIR}/${FILENAME}"
+  fi
+}
+
+function upgrade_kubeseal() {
+  local VERSION="${1}"
+  if [[ -z ${VERSION} ]]; then
+    echo "Please, specify a version (example: 0.13.1)"
+  else
+    local FILENAME="kubeseal"
+    local URL="https://github.com/bitnami-labs/sealed-secrets/releases/download/v${VERSION}/${FILENAME}-linux-amd64"
+    curl -L -o "/tmp/${FILENAME}" "${URL}"
     mv "/tmp/${FILENAME}" "${BIN_DIR}/${FILENAME}"
     chmod +x "${BIN_DIR}/${FILENAME}"
   fi
