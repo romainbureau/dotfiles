@@ -16,6 +16,6 @@ function loadkctlalias() {
   done
 }
 
-alias kkpodexec='kctlpodexec'
-alias kctlpodlog='kail -p $(kubectl get pods --no-headers -o custom-columns=":metadata.name"|fzf)'
+alias kk_pod_exec='kctlpodexec'
+alias kk_pod_log='kail -p $(kubectl get pods --no-headers -o custom-columns=":metadata.name"|fzf)'
 loadkctlalias
