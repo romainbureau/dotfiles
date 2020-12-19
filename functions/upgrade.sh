@@ -120,3 +120,11 @@ function upgrade_kubeseal() {
     chmod +x "${BIN_DIR}/${FILENAME}"
   fi
 }
+
+function upgrade_mc() {
+  local URL="https://dl.min.io/client/mc/release/linux-amd64/mc"
+  local FILENAME="$(basename ${URL})"
+  curl -o "${BIN_DIR}/${FILENAME}" "${URL}"
+  chmod +x "${BIN_DIR}/${FILENAME}"
+}
+
