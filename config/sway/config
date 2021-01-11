@@ -49,8 +49,8 @@ for_window [class="Pavucontrol"] floating enable
 # Example configuration:
 #
 exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
-         timeout 600 'swaymsg "output * dpms off"' \
+         timeout 7200 'swaylock -f -c 000000' \
+         timeout 7600 'swaymsg "output * dpms off"' \
               resume 'swaymsg "output * dpms on"' \
          before-sleep 'swaylock -f -c 000000'
 
@@ -64,17 +64,22 @@ exec swayidle -w \
 #
 input 1739:31251:SYNA2393:00_06CB:7A13_Touchpad {
     scroll_factor 0.5
-    dwt enabled 
+    dwt enabled
     tap enabled
-    natural_scroll disabled 
+    natural_scroll disabled
     middle_emulation enabled
     scroll_method two_finger
     accel_profile adaptive
-    drag disabled 
+    drag disabled
     tap_button_map lrm
     pointer_accel 0.5 # set mouse sensitivity (between -1 and 1)
 }
 
+input type:keyboard {
+  xkb_options caps:escape
+  repeat_delay 250
+  repeat_rate 45
+}
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
