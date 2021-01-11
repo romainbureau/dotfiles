@@ -12,7 +12,7 @@ ln -sf $HOME/workspace/dotfiles/bash_profile $HOME/.bash_profile
 ln -sf $HOME/workspace/dotfiles/bashrc $HOME/.bashrc
 ln -sf $HOME/workspace/dotfiles/config/sublime-text-3/Packages/User/Preferences.sublime-settings $HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
 ln -sf $HOME/workspace/dotfiles/config/sublime-text-3/Packages/User/Package\ Control.sublime-settings $HOME/.config/sublime-text-3/Packages/User/Package\ Control.sublime-settings
-
+ln -sf $HOME/workspace/dotfiles/config/sublime-text-3/Packages/User/GitBlame.py $HOME/.config/sublime-text-3/Packages/User/GitBlame.py
 for i in $(/bin/ls ./scripts)
 do
   ln -sf $HOME/workspace/dotfiles/scripts/$i $HOME/bin/$i
