@@ -44,6 +44,7 @@ set wrapmargin=0
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 au BufNewFile,BufRead *.yaml,*.yml set filetype=yaml.ansible
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
+
 " <plugins>
 call plug#begin('~/.config/vim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -58,4 +59,4 @@ call plug#end()
 nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
 " </plugins>
 
-execute 'source ' . $HOME . '/.config/vim/statusline.vim'
+execute 'source ' . $HOME . '/.vim/statusline.vim'
