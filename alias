@@ -8,6 +8,7 @@ alias fzf='fzf --reverse --border --height 40% --inline-info'
 alias testdhcp='sudo nmap --script broadcast-dhcp-discover'
 alias note='subl -n ~/Documents/notes.md'
 alias wifils='nmcli dev wifi'
+alias vim='nvim'
 # Kubectl
 function loadkctlalias() {
   for i in pods services ingresses deployments configmaps secrets; do

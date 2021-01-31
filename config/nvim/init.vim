@@ -3,14 +3,12 @@ set background=dark
 set number
 set vb
 set encoding=utf-8
-set mousehide
+set mouse=a
 syntax on
 set ruler
 set cmdheight=1
 set hid
 set laststatus=2
-:highlight ExtraWhitespace ctermbg=red guibg=red
-:match ExtraWhitespace /\s\+$/
 set showmode
 set showcmd
 set showmatch
@@ -30,23 +28,24 @@ set nowb
 set noswapfile
 set colorcolumn=80
 set clipboard=unnamedplus
-:highlight ColorColumn guibg=#444444
-filetype on
-filetype plugin indent on
+set diffopt+=vertical
+set completeopt=menuone,noinsert,noselect
 set incsearch
 set hlsearch
 set nofixendofline
 set wrap
 set linebreak
-set nolist  " list disables linebreak
+set nolist
 set textwidth=0
 set wrapmargin=0
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-au BufNewFile,BufRead *.yaml,*.yml set filetype=yaml.ansible
+
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
+let g:netrw_banner=0 " disable banner in netrw
+let g:netrw_liststyle=3 " tree view in netrw
 
 " <plugins>
-call plug#begin('~/.config/vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
+Plug 'tomasiser/vim-code-dark'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'editorconfig/editorconfig-vim'
@@ -57,6 +56,9 @@ call plug#end()
 
 " git-blame
 nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
+" fzf
+nnoremap <Leader>p :Files<CR>
 " </plugins>
 
-execute 'source ' . $HOME . '/.vim/statusline.vim'
+colorscheme codedark
+execute 'source ' . $HOME . '/.config/nvim/statusline.vim'
