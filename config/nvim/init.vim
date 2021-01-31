@@ -29,7 +29,6 @@ set noswapfile
 set colorcolumn=80
 set clipboard=unnamedplus
 set diffopt+=vertical
-set completeopt=menuone,noinsert,noselect
 set incsearch
 set hlsearch
 set nofixendofline
@@ -52,12 +51,23 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'airblade/vim-gitgutter'
 Plug 'zivyangll/git-blame.vim'
+" LSP
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'mattn/vim-lsp-settings'
+Plug 'piec/vim-lsp-gopls'
 call plug#end()
 
 " git-blame
 nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
 " fzf
 nnoremap <Leader>p :Files<CR>
+" asyncomplete
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+" vim-lsp
 " </plugins>
 
 colorscheme codedark
