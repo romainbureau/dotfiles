@@ -31,12 +31,13 @@ set clipboard=unnamedplus
 set diffopt+=vertical
 set incsearch
 set hlsearch
-set nofixendofline
 set wrap
 set linebreak
 set nolist
 set textwidth=0
 set wrapmargin=0
+set nocompatible
+filetype plugin on
 
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 let g:netrw_banner=0 " disable banner in netrw
@@ -52,6 +53,7 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'airblade/vim-gitgutter'
 Plug 'zivyangll/git-blame.vim'
 Plug 'tpope/vim-surround'
+Plug 'vimwiki/vimwiki'
 " LSP
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/vim-lsp'
@@ -60,15 +62,18 @@ Plug 'mattn/vim-lsp-settings'
 Plug 'piec/vim-lsp-gopls'
 call plug#end()
 
-" git-blame
+" zivyangll/git-blame.vim
 nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
-" fzf
+" junegunn/fzf.vim
 nnoremap <Leader>p :Files<CR>
-" asyncomplete
+" prabirshrestha/asyncomplete.vim'
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
-" vim-lsp
+" prabirshrestha/vim-lsp
+" vimwiki/vimwiki
+let g:vimwiki_list = [{'path': '~/Documents/wiki/', 'syntax': 'markdown'}]
+au FileType vimwiki setlocal shiftwidth=6 tabstop=6 noexpandtab
 " </plugins>
 
 colorscheme codedark

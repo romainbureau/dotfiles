@@ -3,7 +3,7 @@
   email = rb@hio.fr
   signingkey = C68013856070FED0
 [core]
-  editor = vim
+  editor = nvim
   pager = delta --dark
   autocrlf = input
 [color "diff"]
