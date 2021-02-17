@@ -72,7 +72,7 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 " prabirshrestha/vim-lsp
 " vimwiki/vimwiki
-let g:vimwiki_list = [{'path': '~/Documents/wiki/', 'syntax': 'markdown'}]
+let g:vimwiki_list = [{'path': '~/Documents/wiki/', 'syntax': 'markdown', 'ext': '.md'}]
 au FileType vimwiki setlocal shiftwidth=6 tabstop=6 noexpandtab
 " </plugins>
 
