@@ -2,13 +2,13 @@
 
 function upgrade_all() {
   upgrade_terraform "0.14.7"
-  upgrade_delta "0.4.4"
-  upgrade_kubectl "1.19.4"
-  upgrade_kubectx "0.9.1"
-  upgrade_kubens "0.9.1"
+  upgrade_delta "0.6.0"
+  upgrade_kubectl "1.20.4"
+  upgrade_kubectx "0.9.3"
+  upgrade_kubens "0.9.3"
   upgrade_kail "0.15.0"
-  upgrade_fzf "0.24.2"
-  upgrade_kubeseal "0.13.1"
+  upgrade_fzf "0.25.1"
+  upgrade_kubeseal "0.15.0"
   upgrade_vegeta "12.8.4"
 }
 
