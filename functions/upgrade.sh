@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function upgrade_all() {
-  upgrade_terraform "0.14.6"
+  upgrade_terraform "0.14.7"
   upgrade_delta "0.4.4"
   upgrade_kubectl "1.19.4"
   upgrade_kubectx "0.9.1"
@@ -9,6 +9,7 @@ function upgrade_all() {
   upgrade_kail "0.15.0"
   upgrade_fzf "0.24.2"
   upgrade_kubeseal "0.13.1"
+  upgrade_vegeta "12.8.4"
 }
 
 
@@ -52,8 +53,7 @@ function upgrade_kubectl() {
   fi
 }
 
-function upgrade_kubectx() {
-  local VERSION="${1}"
+function upgrade_kubectx() { local VERSION="${1}"
   if [[ -z ${VERSION} ]]; then
     echo "Please, specify a version (example: 0.9.1)"
   else
@@ -127,4 +127,17 @@ function upgrade_mc() {
   curl -o "${BIN_DIR}/${FILENAME}" "${URL}"
   chmod +x "${BIN_DIR}/${FILENAME}"
 }
+
+function upgrade_vegeta() {
+	local VERSION="${1}"
+	if [[ -z ${VERSION} ]]; then
+		echo "Please, specify a version (example: 12.8.4)"
+	else
+		local URL="https://github.com/tsenart/vegeta/releases/download/v${VERSION}/vegeta_${VERSION}_linux_amd64.tar.gz"
+		local FILENAME="$(basename ${URL})"
+		curl -L -o "/tmp/${FILENAME}" "${URL}"
+		tar -xvzf "/tmp/${FILENAME}" -C "${BIN_DIR}" "vegeta"
+	fi
+}
+
 
