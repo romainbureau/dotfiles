@@ -28,3 +28,5 @@ fi
 . "$dotfiles_dir/alias"
 . "$dotfiles_dir/ps1"
 . "$dotfiles_dir/ssh-agent"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

@@ -1,4 +1,4 @@
-alias meteo="curl wttr.in"
+alias meteo="curl wttr.in/paris"
 alias myip="curl ifconfig.me"
 alias pass='fzpass'
 alias ls="ls -rtlh"
@@ -9,6 +9,8 @@ alias testdhcp='sudo nmap --script broadcast-dhcp-discover'
 alias note='subl -n ~/Documents/notes.md'
 alias wifils='nmcli dev wifi'
 alias vim='nvim'
+alias video='mpv av://v4l2:/dev/video0 --profile=low-latency --untimed'
+alias chrome='google-chrome-unstable -enable-features=UseOzonePlatform -ozone-platform=wayland'
 # Kubectl
 function loadkctlalias() {
   for i in pods services ingresses deployments configmaps secrets; do
