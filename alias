@@ -10,7 +10,8 @@ alias note='subl -n ~/Documents/notes.md'
 alias wifils='nmcli dev wifi'
 alias vim='nvim'
 alias video='mpv av://v4l2:/dev/video0 --profile=low-latency --untimed'
-alias chrome='google-chrome-unstable -enable-features=UseOzonePlatform -ozone-platform=wayland'
+alias firefox='swaymsg exec "unset DISPLAY && firefox"'
+alias chrome='swaymsg exec "google-chrome-unstable -enable-features=UseOzonePlatform -ozone-platform=wayland"'
 # Kubectl
 function loadkctlalias() {
   for i in pods services ingresses deployments configmaps secrets; do

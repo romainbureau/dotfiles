@@ -34,6 +34,11 @@
   pushf = push --force-with-lease
   rbm = pull --rebase origin master
   chbr = ! git checkout $(git branch|fzf)
+  fixup = ! git commit --fixup $(git log-pretty "$(git default-branch)...$(git current-branch)" --grep "^fixup" --invert-grep | fzf --height 20 --ansi --reverse | awk '{print $1}')
+  current-branch = rev-parse --abbrev-ref HEAD
+  default-branch = ! git remote show origin | grep 'HEAD branch:' | awk '{print $3}'
+  log-pretty = log --color --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+  fixup = ! git commit --fixup $(git log-pretty "$(git default-branch)...$(git current-branch)" --grep "^fixup" --invert-grep | fzf --height 20 --ansi --reverse | awk '{print $1}')
 [diff "ansible-vault"]
   textconv = ansible-vault view
 [commit]
@@ -43,3 +48,7 @@
   default = current
 [pull]
   rebase = true
+[rebase]
+  autosquash = true
+[fetch]
+  prune = true
