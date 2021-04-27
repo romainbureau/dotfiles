@@ -7,7 +7,7 @@ function upgrade_all() {
   upgrade_kubectx "0.9.3"
   upgrade_kubens "0.9.3"
   upgrade_kail "0.15.0"
-  upgrade_fzf "0.25.1"
+  upgrade_fzf "0.27.0"
   upgrade_kubeseal "0.15.0"
   upgrade_vegeta "12.8.4"
 }
