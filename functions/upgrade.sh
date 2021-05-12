@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function upgrade_all() {
-  upgrade_terraform "0.14.7"
+  upgrade_terraform "0.15.1"
   upgrade_delta "0.7.1"
   upgrade_kubectl "1.20.4"
   upgrade_kubectx "0.9.3"

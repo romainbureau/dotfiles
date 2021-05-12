@@ -66,6 +66,7 @@ call plug#end()
 nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
 " junegunn/fzf.vim
 nnoremap <Leader>p :Files<CR>
+nnoremap <Leader>b :Buffers<CR>
 " prabirshrestha/asyncomplete.vim'
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
