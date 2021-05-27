@@ -10,6 +10,7 @@ function upgrade_all() {
   upgrade_fzf "0.27.0"
   upgrade_kubeseal "0.15.0"
   upgrade_vegeta "12.8.4"
+  upgrade_golangci-lint "1.40.1"
 }
 
 
@@ -140,4 +141,15 @@ function upgrade_vegeta() {
 	fi
 }
 
-
+function upgrade_golangci-lint() {
+	local VERSION="${1}"
+	if [[ -z ${VERSION} ]]; then
+		echo "Please, specify a version (example: 1.40.1)"
+	else
+		local URL="https://github.com/golangci/golangci-lint/releases/download/v${VERSION}/golangci-lint-${VERSION}-linux-amd64.tar.gz"
+		local FILENAME="$(basename ${URL})"
+		curl -L -o "/tmp/${FILENAME}" "${URL}"
+		tar -xvzf "/tmp/${FILENAME}" -C "/tmp"
+    mv  "/tmp/golangci-lint-1.40.1-linux-amd64/golangci-lint" ${BIN_DIR}
+	fi
+}
