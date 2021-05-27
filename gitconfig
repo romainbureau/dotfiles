@@ -30,7 +30,7 @@
   undo = reset --soft HEAD^
   graph = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
   sweep = "! git prune && git remote prune origin && git gc && git branch --merged | egrep -v '(^\\*|master)' | xargs git branch -d"
-  tidy = rebase -i origin/master
+  tidy = ! git rebase -i origin/"$(git default-branch)"
   pushf = push --force-with-lease
   rbm = pull --rebase origin master
   chbr = ! git checkout $(git branch|fzf)
