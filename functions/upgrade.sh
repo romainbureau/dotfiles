@@ -11,6 +11,7 @@ function upgrade_all() {
   upgrade_kubeseal "0.15.0"
   upgrade_vegeta "12.8.4"
   upgrade_golangci-lint "1.40.1"
+  upgrade_flux "1.22.2"
 }
 
 
@@ -153,3 +154,13 @@ function upgrade_golangci-lint() {
     mv  "/tmp/golangci-lint-1.40.1-linux-amd64/golangci-lint" ${BIN_DIR}
 	fi
 }
+
+function upgrade_flux() {
+	local VERSION="${1}"
+  local URL="https://github.com/fluxcd/flux/releases/download/${VERSION}/fluxctl_linux_amd64"
+  local FILENAME="$(basename ${URL})"
+  curl -L -o "${BIN_DIR}/flux" "${URL}"
+  chmod +x "${BIN_DIR}/flux"
+}
+
+
